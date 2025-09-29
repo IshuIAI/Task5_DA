@@ -12,3 +12,4 @@ Done:
     Provided summary of findings
 
 Instead of Jupyter notebook I have used PyCharm.
+Titanic dataset -> train.csv is used.
