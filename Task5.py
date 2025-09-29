@@ -38,10 +38,8 @@ sns.histplot(np.log1p(df['Fare']), kde=True, bins=30)
 plt.title('Distribution of Log(Fare)')
 
 plt.suptitle('Univariate Analysis of Numerical Features')
-plt.tight_layout(rect=[0, 0.03, 1, 0.95]) # Adjust layout for suptitle
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
-
-# Write observations below this cell (e.g., Age is somewhat normal, Fare is highly skewed)
 
 plt.figure(figsize=(15, 5))
 
@@ -64,8 +62,6 @@ plt.suptitle('Bivariate Analysis: Categorical Features vs. Survival')
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 plt.show()
 
-# Write observations below this cell (e.g., Females and 1st class passengers had the highest survival rates)
-
 plt.figure(figsize=(12, 5))
 
 # Age vs. Survival
@@ -77,7 +73,7 @@ plt.title('Age Distribution by Survival (0=Died, 1=Survived)')
 plt.subplot(1, 2, 2)
 sns.boxplot(x='Survived', y='Fare', data=df)
 plt.title('Fare Distribution by Survival (0=Died, 1=Survived)')
-plt.yscale('log') # Use log scale for clarity due to Fare outliers
+plt.yscale('log')
 
 plt.suptitle('Bivariate Analysis: Numerical Features vs. Survival')
 plt.tight_layout(rect=[0, 0.03, 1, 0.95])
@@ -91,8 +87,6 @@ plt.figure(figsize=(8, 6))
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f", linewidths=.5)
 plt.title('Correlation Matrix of Numerical Features')
 plt.show()
-
-# Write observations below this cell (e.g., Pclass is strongly negatively correlated with Survived)
 
 # Adjust numerical columns to exclude the one-hot encoded Pclass if desired, or keep to show all relationships
 sns.pairplot(df[numerical_cols].dropna(), hue='Survived', diag_kind='kde')
